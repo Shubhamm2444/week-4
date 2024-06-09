@@ -1,0 +1,35 @@
+Here's how to add the Express.js framework to your Node.js project:
+
+1. Project Setup (if you don't have an existing project):
+Create a new directory for your project using your terminal.
+Navigate to the project directory using cd.
+Initialize a new project with npm init -y to create a package.json file. This file will manage your project's dependencies.
+
+2. Install Express.js:
+In your terminal, run the following command to install Express.js:
+Bash
+npm install express
+
+This command downloads the Express.js package from the npm registry and adds it as a dependency to your project's package.json file.
+
+3. Import Express in Your JavaScript File:
+Create a JavaScript file (e.g., server.js) where you'll be using Express.js.
+At the top of your server.js file, import Express using the require statement:
+JavaScript
+const express = require('express');
+
+This line tells your code to import the Express.js module and assigns it to the express constant.
+
+4. Create an Express Application:
+Now that you have imported Express, you can create an Express application instance:
+JavaScript
+const app = express();
+
+The app object will be used to define routes, middleware, and handle requests in your Node.js server.
+
+Congratulations! You've successfully added the Express.js framework to your Node.js project. Now you can use Express features like defining routes, handling requests, and sending responses to build your web application or API.
+
+Here are some resources for further learning:
+
+Express.js documentation: https://expressjs.com/
+Tutorial on building a simple web server with Express: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction
