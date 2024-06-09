@@ -1,0 +1,59 @@
+Here's how to create a simple Node.js server using the built-in http module:
+
+1. Create a JavaScript File:
+Create a new JavaScript file (e.g., server.js) in your project directory.
+
+2. Include the http Module:
+Start by including the http module using the require function:
+JavaScript
+const http = require('http');
+Use code with caution.
+content_copy
+
+3. Create a Server Function:
+Define a function to handle incoming requests:
+
+JavaScript
+const server = http.createServer((req, res) => {
+  // Handle the request here
+});
+
+The createServer method takes a callback function as an argument. This function receives two arguments:
+
+req: The incoming HTTP request object containing information about the request (e.g., method, URL, headers, body).
+res: The outgoing HTTP response object used to send a response back to the client.
+
+4. Send a Response:
+Inside the callback function, write code to send a response back to the client. Here's an example that sends a simple "Hello, World!" message:
+
+JavaScript
+res.writeHead(200, { 'Content-Type': 'text/plain' });
+res.write('Hello, World!');
+res.end();
+
+res.writeHead(200, { 'Content-Type': 'text/plain' }): Sets the status code to 200 (OK) and specifies the content type of the response as plain text.
+res.write('Hello, World!'): Writes the message "Hello, World!" to the response body.
+res.end(): Signals the end of the response and sends it to the client.
+
+5. Start the Server:
+Use the listen method on the server object to start listening for incoming requests on a specific port:
+
+JavaScript
+server.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});
+
+server.listen(3000): Starts the server on port 3000. You can change this port number to something else if needed (avoid ports below 1024 as they often require root privileges).
+console.log('Server listening on port 3000'): Logs a message to the console indicating that the server is running.
+
+6. Run the Script:
+Open your terminal, navigate to your project directory, and run the following command:
+
+Bash
+node server.js
+Use code with caution.
+
+This will start your Node.js server, and you should see the console message "Server listening on port 3000".
+
+7. Access the Server:
+Open a web browser and navigate to http://localhost:3000 (or replace 3000 with the port you used). If everything is set up correctly, you should see "Hello, World!" displayed in your browser.
