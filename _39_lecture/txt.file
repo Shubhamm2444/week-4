@@ -1,0 +1,39 @@
+1:This schema defines the structure of your documents (tasks in this case). Each property specifies the data type and any additional options like required or default.
+
+const taskSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  description: String,
+  completed: {
+    type: Boolean,
+    default: false
+  }
+});
+
+2:The first argument ('Task') is the name of your model (collection name in MongoDB), and the second argument is the schema you defined. This model acts as a blueprint for creating task instances.
+
+const Task = mongoose.model('Task', taskSchema);
+
+3:Pass an object literal containing the data for the new task. Mongoose automatically maps the properties to the corresponding schema fields.
+
+const newTask = new Task({
+  title: 'Buy groceries',
+  description: 'Milk, bread, eggs',
+});
+
+4:save is an asynchronous operation, so you can use promises or async/await to handle the result (success or error).
+
+newTask.save()
+  .then(savedTask => {
+    console.log('Task saved:', savedTask);
+  })
+  .catch(error => {
+    console.error('Error saving task:', error);
+  });
+
+5:Additional Points:
+Validation: Mongoose automatically performs validation based on the schema definitions (e.g., enforcing required fields).
+Middleware: You can define middleware functions to execute before or after saving instances for additional logic.
+Mongoose API: Mongoose offers various methods for interacting with models (find, update, delete, etc.). Refer to the official documentation for more details: https://mongoosejs.com/docs/connections.html
