@@ -1,0 +1,2 @@
+Performing CRUD Operations with Mongoose
+Mongoose provides a convenient way to perform CRUD (Create, Read, Update, Delete) operations on your data stored in MongoDB. Here's a breakdown of each operation:
