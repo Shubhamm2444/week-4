@@ -1,0 +1,13 @@
+1:This file lists the dependencies your project requires. Make sure you have Mongoose installed:
+
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "mongoose": "^latest"
+  }
+}
